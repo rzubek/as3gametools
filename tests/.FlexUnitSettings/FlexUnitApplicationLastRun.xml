@@ -2,14 +2,17 @@
 <testrun name="" >
 <testsuite  name="Default Test Suite" project="AS3 Game Tools Unit Tests">
 <testsuite name="com.adobe.crypto:SHA256Test" type="testsuiteclass"/>
+<testsuite name="com.adobe.utils:StringUtilTest" type="testsuiteclass"/>
 <testsuite name="somasim.pools:ObjectPoolTest" type="testsuiteclass"/>
 <testsuite name="com.adobe.crypto:HMACSHA1Test" type="testsuiteclass"/>
+<testsuite name="com.adobe.utils:ArrayUtilTest" type="testsuiteclass"/>
 <testsuite name="com.adobe.utils:IntUtilTest" type="testsuiteclass"/>
 <testsuite name="somasim.math.random:TinyMTTest" type="testsuiteclass"/>
 <testsuite name="com.adobe.crypto:MD5Test" type="testsuiteclass"/>
 <testsuite name="somasim.math.random:MersenneTwisterTest" type="testsuiteclass"/>
 <testsuite name="com.adobe.images:PNGEncoderTest" type="testsuiteclass"/>
 <testsuite name="com.adobe.crypto:HMACMD5Test" type="testsuiteclass"/>
+<testsuite name="com.adobe.utils:DictionaryUtilTest" type="testsuiteclass"/>
 <testsuite name="com.adobe.crypto:SHA224Test" type="testsuiteclass"/>
 <testsuite name="com.adobe.crypto:SHA1Test" type="testsuiteclass"/>
 <testsuite name="com.adobe.images:JPGEncoderTest" type="testsuiteclass"/>
