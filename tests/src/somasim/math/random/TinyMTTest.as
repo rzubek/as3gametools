@@ -2,7 +2,7 @@ package somasim.math.random
 {
 	import org.flexunit.asserts.assertEquals;
 
-	public class TinyMTTests
+	public class TinyMTTest
 	{		
 		[Test]
 		public function testFirstRun () :void {

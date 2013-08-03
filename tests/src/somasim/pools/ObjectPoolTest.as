@@ -4,7 +4,7 @@ package somasim.pools
 	import org.flexunit.asserts.assertNotNull;
 	import org.flexunit.asserts.assertNull;
 
-	public class ObjectPoolTests
+	public class ObjectPoolTest
 	{
 		[Test]
 		public function testInitialization () :void {

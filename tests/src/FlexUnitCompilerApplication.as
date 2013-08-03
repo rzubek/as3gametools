@@ -6,12 +6,12 @@
 package
 {
 	import flash.display.Sprite;
-	import somasim.math.random.TinyMTTests;
-	import somasim.math.random.MersenneTwisterTests;
+	import somasim.math.random.TinyMTTest;
+	import somasim.math.random.MersenneTwisterTest;
 	
 	public class FlexUnitCompilerApplication extends Sprite
 	{
-		private var somasim_math_random_MersenneTwisterTests_obj:somasim.math.random.MersenneTwisterTests;
-		private var somasim_math_random_TinyMTTests_obj:somasim.math.random.TinyMTTests;
+		private var somasim_math_random_MersenneTwisterTests_obj:somasim.math.random.MersenneTwisterTest;
+		private var somasim_math_random_TinyMTTests_obj:somasim.math.random.TinyMTTest;
 	}
 }

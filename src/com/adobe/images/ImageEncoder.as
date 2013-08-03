@@ -1,37 +1,21 @@
-AS3 Game Tools
-==============
-
-A collection of tools useful in game development.
-
-
-
-Copyright Information
----------------------
-
-AS3 Game Tools 
-Copyright (c) 2013 Robert Zubek and SomaSim LLC. 
-
-Licensed under the MIT License, see LICENSE file.
-
-
-Files inside the com.adobe package only are copyright 2008 Adobe Systems Incorporated. 
-All rights reserved. Code is released under a BSD License:
-http://www.opensource.org/licenses/bsd-license.php
+/*
+Copyright (c) 2008, Adobe Systems Incorporated
+All rights reserved.
 
 Redistribution and use in source and binary forms, with or without 
 modification, are permitted provided that the following conditions are
 met:
 
 * Redistributions of source code must retain the above copyright notice, 
-  this list of conditions and the following disclaimer.
+this list of conditions and the following disclaimer.
 
 * Redistributions in binary form must reproduce the above copyright
-  notice, this list of conditions and the following disclaimer in the 
-  documentation and/or other materials provided with the distribution.
+notice, this list of conditions and the following disclaimer in the 
+documentation and/or other materials provided with the distribution.
 
 * Neither the name of Adobe Systems Incorporated nor the names of its 
-  contributors may be used to endorse or promote products derived from 
-  this software without specific prior written permission.
+contributors may be used to endorse or promote products derived from 
+this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
 IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
@@ -44,11 +28,29 @@ PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
 LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-Base64Encoder and Base64Decoder only:
-Copyright 2012 The Apache Software Foundation
-Copyright 2003 - 2012 Adobe Systems Incorporated. All Rights Reserved.
-Licensed under the Apache License, Version 2.0;
-http://www.apache.org/licenses/LICENSE-2.0
-
-
+*/
+package com.adobe.images
+{
+	import flash.display.BitmapData;
+	import flash.utils.ByteArray;
+	
+	/**
+	 * Contract for classes that provide encoding mechanism over images.
+	 *
+	 */ 
+	public interface ImageEncoder
+	{
+		
+		/**
+		 * Return an encoded image from the specified BitmapData
+		 *
+		 * @param image The BitmapData that will be converted into the encoded format.
+		 * @return a ByteArray representing the encoded image data.
+		 * @langversion ActionScript 3.0
+		 * @playerversion Flash 9.0
+		 * @tiptext
+		 */
+		function encode(image:BitmapData):ByteArray;
+		
+	}
+}

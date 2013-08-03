@@ -2,7 +2,7 @@ package somasim.math.random
 {
 	import org.flexunit.asserts.assertEquals;
 
-	public class MersenneTwisterTests
+	public class MersenneTwisterTest
 	{		
 		[Test]
 		public function testFirstRun () :void {
