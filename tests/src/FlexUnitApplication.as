@@ -8,6 +8,7 @@ package
 	
 	import somasim.math.random.MersenneTwisterTests;
 	import somasim.math.random.TinyMTTests;
+	import somasim.pools.ObjectPoolTests;
 	
 	public class FlexUnitApplication extends Sprite
 	{
@@ -29,6 +30,7 @@ package
 			var testsToRun:Array = new Array();
 			testsToRun.push(somasim.math.random.MersenneTwisterTests);
 			testsToRun.push(somasim.math.random.TinyMTTests);
+			testsToRun.push(somasim.pools.ObjectPoolTests);
 			return testsToRun;
 		}
 	}

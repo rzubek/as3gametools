@@ -22,9 +22,9 @@ package somasim.math.random
 		
 		// initialization constants (in the MT reference implementation
 		// they're specified by the user during initialization, but they don't change)
-		private static const MAT1 :uint = 0x70707070;
-		private static const MAT2 :uint = 0x07070707;
-		private static const TMAT :uint = 0x55555555;
+		public var MAT1 :uint = 0x70707070;
+		public var MAT2 :uint = 0x07070707;
+		public var TMAT :uint = 0x55555555;
 
 		// protected static const MIN_LOOP :int = 8;
 		protected static const PRE_LOOP :int = 8;
@@ -144,28 +144,6 @@ package somasim.math.random
 			t0 ^= -(t1 & 1) & TMAT;
 			return t0;
 		}
-		
-		/*
-		public static function test () :void {
-			var r :TinyMT = new TinyMT();
-			r.init(1);
-			
-			trace("1000 outputs of genrand_int32()\n");
-			for (var i :int = 0; i < 5000; i++) {
-				trace(r.next());
-			}
-			
-			trace("benchmark 10M random numbers... ");
-			var ts :int = getTimer();
-			for (i = 0; i < 10000000; i++) {
-				r.next();
-			}
-			var delta :int = getTimer() - ts;
-			trace(" ... done in " + (delta / 1000) + " seconds");
-			
-			// note: generates ~ 1.5M numbers / second on a 2013 core i7 laptop, in debug mode
-		}
-		*/
 	}
 }
 
