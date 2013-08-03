@@ -84,28 +84,5 @@ package somasim.math.random
 			
 			return y;
 		}
-
-		/*
-		public static function test () :void
-		{
-			var random :Random = new Random();
-			random.seed = 1234;
-			
-			trace("1000 outputs of genrand_int32()\n");
-			for (var i :int = 0; i < 5000; i++) {
-				trace(random.next());
-			}
-			
-			trace("benchmark 10M random numbers... ");
-			var ts :int = getTimer();
-			for (i = 0; i < 10000000; i++) {
-				random.next();
-			}
-			var delta :int = getTimer() - ts;
-			trace(" ... done in " + (delta / 1000) + " seconds");
-		
-			// note: generates ~ 2M numbers / second on a 2013 core i7 laptop
-		}
-		*/
 	}
 }
