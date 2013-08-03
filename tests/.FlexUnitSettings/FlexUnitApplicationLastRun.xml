@@ -12,7 +12,7 @@
 <testsuite name="somasim.math.random:MersenneTwisterTest" type="testsuiteclass"/>
 <testsuite name="com.adobe.images:PNGEncoderTest" type="testsuiteclass"/>
 <testsuite name="com.adobe.crypto:HMACMD5Test" type="testsuiteclass"/>
-<testsuite name="com.adobe.utils:DictionaryUtilTest" type="testsuiteclass"/>
+<testsuite name="somasim.utils:DictionaryUtilTest" type="testsuiteclass"/>
 <testsuite name="com.adobe.crypto:SHA224Test" type="testsuiteclass"/>
 <testsuite name="com.adobe.crypto:SHA1Test" type="testsuiteclass"/>
 <testsuite name="com.adobe.images:JPGEncoderTest" type="testsuiteclass"/>

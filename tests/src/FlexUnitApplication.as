@@ -11,7 +11,6 @@ package
 	import com.adobe.images.JPGEncoderTest;
 	import com.adobe.images.PNGEncoderTest;
 	import com.adobe.utils.ArrayUtilTest;
-	import com.adobe.utils.DictionaryUtilTest;
 	import com.adobe.utils.IntUtilTest;
 	import com.adobe.utils.StringUtilTest;
 	
@@ -22,6 +21,7 @@ package
 	import somasim.math.random.MersenneTwisterTest;
 	import somasim.math.random.TinyMTTest;
 	import somasim.pools.ObjectPoolTest;
+	import somasim.utils.DictionaryUtilTest;
 	
 	public class FlexUnitApplication extends Sprite
 	{
@@ -52,7 +52,7 @@ package
 			testsToRun.push(somasim.math.random.MersenneTwisterTest);
 			testsToRun.push(com.adobe.images.PNGEncoderTest);
 			testsToRun.push(com.adobe.crypto.HMACMD5Test);
-			testsToRun.push(com.adobe.utils.DictionaryUtilTest);
+			testsToRun.push(somasim.utils.DictionaryUtilTest);
 			testsToRun.push(com.adobe.crypto.SHA224Test);
 			testsToRun.push(com.adobe.crypto.SHA1Test);
 			testsToRun.push(com.adobe.images.JPGEncoderTest);
