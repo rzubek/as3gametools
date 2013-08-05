@@ -10,6 +10,7 @@ package
 	import com.adobe.crypto.SHA256Test;
 	import com.adobe.images.JPGEncoderTest;
 	import com.adobe.images.PNGEncoderTest;
+	import com.adobe.net.URITest;
 	import com.adobe.utils.ArrayUtilTest;
 	import com.adobe.utils.IntUtilTest;
 	import com.adobe.utils.StringUtilTest;
@@ -51,6 +52,7 @@ package
 			testsToRun.push(somasim.math.random.TinyMTTest);
 			testsToRun.push(com.adobe.crypto.MD5Test);
 			testsToRun.push(somasim.math.random.MersenneTwisterTest);
+			testsToRun.push(com.adobe.net.URITest);
 			testsToRun.push(com.adobe.images.PNGEncoderTest);
 			testsToRun.push(com.adobe.crypto.HMACMD5Test);
 			testsToRun.push(somasim.utils.DictionaryUtilTest);

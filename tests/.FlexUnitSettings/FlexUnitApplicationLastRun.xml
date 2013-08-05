@@ -10,6 +10,7 @@
 <testsuite name="somasim.math.random:TinyMTTest" type="testsuiteclass"/>
 <testsuite name="com.adobe.crypto:MD5Test" type="testsuiteclass"/>
 <testsuite name="somasim.math.random:MersenneTwisterTest" type="testsuiteclass"/>
+<testsuite name="com.adobe.net:URITest" type="testsuiteclass"/>
 <testsuite name="com.adobe.images:PNGEncoderTest" type="testsuiteclass"/>
 <testsuite name="com.adobe.crypto:HMACMD5Test" type="testsuiteclass"/>
 <testsuite name="somasim.utils:DictionaryUtilTest" type="testsuiteclass"/>
