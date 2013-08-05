@@ -18,6 +18,7 @@ package
 	
 	import flexunit.flexui.FlexUnitTestRunnerUIAS;
 	
+	import somasim.math.CRC32Test;
 	import somasim.math.random.MersenneTwisterTest;
 	import somasim.math.random.TinyMTTest;
 	import somasim.pools.ObjectPoolTest;
@@ -53,6 +54,7 @@ package
 			testsToRun.push(com.adobe.images.PNGEncoderTest);
 			testsToRun.push(com.adobe.crypto.HMACMD5Test);
 			testsToRun.push(somasim.utils.DictionaryUtilTest);
+			testsToRun.push(somasim.math.CRC32Test);
 			testsToRun.push(com.adobe.crypto.SHA224Test);
 			testsToRun.push(com.adobe.crypto.SHA1Test);
 			testsToRun.push(com.adobe.images.JPGEncoderTest);
