@@ -10,10 +10,7 @@ package somasim.math.random
 	public class TinyMT
 	{
 		// state variables
-		public var s0 :uint;
-		public var s1 :uint;
-		public var s2 :uint;
-		public var s3 :uint;
+		public var s :Vector.<uint> = new Vector.<uint>(4, true);
 
 		// seed value
 		public var rawseed :uint;
@@ -26,7 +23,7 @@ package somasim.math.random
 		public var MAT2 :uint = 0x07070707;
 		public var TMAT :uint = 0x55555555;
 
-		// protected static const MIN_LOOP :int = 8;
+		protected static const MIN_LOOP :int = 8;
 		protected static const PRE_LOOP :int = 8;
 		protected static const UINT_TO_FLOAT_MUL :Number = 1 / 4294967296; // 1 / 2^32
 		
@@ -89,30 +86,16 @@ package somasim.math.random
 
 		/** Initialize the random number generator with a uint seed */
 		private final function init (seed :uint) :void {
-			s0 = seed;
-			s1 = MAT1;
-			s2 = MAT2;
-			s3 = TMAT;
+			s[0] = seed;
+			s[1] = MAT1;
+			s[2] = MAT2;
+			s[3] = TMAT;
 
-			/*
 			for (var i :int = 1; i < MIN_LOOP; i++) {
-				this.status[i & 3] ^= i + 1812433253 * 
-					(this.status[(i - 1) & 3] ^ (this.status[(i - 1) & 3] >>> 30));
+				s[i & 3] ^= i + 1812433253 * (s[(i - 1) & 3] ^ (s[(i - 1) & 3] >>> 30));
 			}
-			*/
 			
-			// manually unrolled the loop for MIN_LOOP = 8,
-			// so that we can convert status[] array into 
-			// four simple variables s0..s3 for perf
-			s1 ^= 1 + uint(0x6c078965) * (s0 ^ (s0 >>> 30));
-			s2 ^= 2 + uint(0x6c078965) * (s1 ^ (s1 >>> 30));
-			s3 ^= 3 + uint(0x6c078965) * (s2 ^ (s2 >>> 30));
-			s0 ^= 4 + uint(0x6c078965) * (s3 ^ (s3 >>> 30));
-			s1 ^= 5 + uint(0x6c078965) * (s0 ^ (s0 >>> 30));
-			s2 ^= 6 + uint(0x6c078965) * (s1 ^ (s1 >>> 30));
-			s3 ^= 7 + uint(0x6c078965) * (s2 ^ (s2 >>> 30));
-
-			for (var i :int = 0; i < PRE_LOOP; i++) {
+			for (var j :int = 0; j < PRE_LOOP; j++) {
 				nextState();
 			}
 		}
@@ -122,24 +105,24 @@ package somasim.math.random
 			var x :uint;
 			var y :uint;
 			
-			y = s3;
-			x = (s0 & 0x7fffffff) ^ s1 ^ s2;
+			y = s[3];
+			x = (s[0] & 0x7fffffff) ^ s[1] ^ s[2];
 			x ^= (x << 1);
 			y ^= (y >>> 1) ^ x;
-			s0 = s1;
-			s1 = s2;
-			s2 = x ^ (y << 10);
-			s3 = y;
-			s1 ^= -(y & 1) & MAT1;
-			s2 ^= -(y & 1) & MAT2;
+			s[0] = s[1];
+			s[1] = s[2];
+			s[2] = x ^ (y << 10);
+			s[3] = y;
+			s[1] ^= -(y & 1) & MAT1;
+			s[2] ^= -(y & 1) & MAT2;
 			
 			gencount++;
 		}
 		
 		/** Outputs an unsigned int from the current internal state */
 		[Inline] private final function temper () :uint {
-			var t0 :uint = s3;
-			var t1 :uint = s0 ^ (s2 >>> 8);
+			var t0 :uint = s[3];
+			var t1 :uint = s[0] ^ (s[2] >>> 8);
 			t0 ^= t1;
 			t0 ^= -(t1 & 1) & TMAT;
 			return t0;
