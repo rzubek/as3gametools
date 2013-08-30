@@ -83,7 +83,18 @@ package somasim.math.random
 			return container[index];
 		}
 		
-
+		/** 
+		 * Destructively shuffles the container using the Fisher-Yates algorithm. 
+		 */
+		public function shuffle (container :*) :void {
+			for (var i :int = container.length - 1; i > 0; i--) {
+				var j :int = nextInRange(0, i + 1);
+				var tmp :* = container[i];
+				container[i] = container[j];
+				container[j] = tmp;
+			}
+		}
+		
 		/** Initialize the random number generator with a uint seed */
 		private final function init (seed :uint) :void {
 			s[0] = seed;
