@@ -24,6 +24,7 @@ package
 	import somasim.math.random.TinyMTTest;
 	import somasim.pools.ObjectPoolTest;
 	import somasim.utils.DictionaryUtilTest;
+	import somasim.utils.VectorUtilTest;
 	
 	public class FlexUnitApplication extends Sprite
 	{
@@ -55,6 +56,7 @@ package
 			testsToRun.push(com.adobe.net.URITest);
 			testsToRun.push(com.adobe.images.PNGEncoderTest);
 			testsToRun.push(com.adobe.crypto.HMACMD5Test);
+			testsToRun.push(somasim.utils.VectorUtilTest);
 			testsToRun.push(somasim.utils.DictionaryUtilTest);
 			testsToRun.push(somasim.math.CRC32Test);
 			testsToRun.push(com.adobe.crypto.SHA224Test);
