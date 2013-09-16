@@ -80,7 +80,7 @@ package com.adobe.utils
 		{
 			var len:uint = arr.length;
 			
-			for(var i:Number = len; i > -1; i--)
+			for(var i:Number = len - 1; i > -1; i--)
 			{
 				if(arr[i] === value)
 				{
