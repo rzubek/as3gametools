@@ -9,11 +9,13 @@ package somasim.utils
 
 	public class DictionaryUtilTest {
 		
+		private const TESTOBJ :Object = { foo: 1, bar: 2, baz: 3 };
+		
 	    private function makeDictionary () :Dictionary {
 			var d :Dictionary = new Dictionary();
 			d.keyA = "valueA";
 			d["keyB"] = "valueB";
-			d[1] = 2;
+			d[1] = TESTOBJ;
 			return d;			
         }
 		
@@ -34,7 +36,7 @@ package somasim.utils
 			assertEquals(3, values.length);
 			assertTrue(ArrayUtil.arrayContainsValue(values, "valueA"));
 			assertTrue(ArrayUtil.arrayContainsValue(values, "valueB"));
-			assertTrue(ArrayUtil.arrayContainsValue(values, 2));
+			assertTrue(ArrayUtil.arrayContainsValue(values, TESTOBJ));
 		}
 
 		[Test]
@@ -44,6 +46,19 @@ package somasim.utils
 			
 			var keys :Array = DictionaryUtil.getKeys(d);
 			assertEquals(0, keys.length);
+		}
+		
+		[Test]
+		public function testClone():void {
+			var d :Dictionary = makeDictionary();
+			var c :Dictionary = DictionaryUtil.clone(d);
+			
+			var cKeys :Array = DictionaryUtil.getKeys(c).sort();
+			var dKeys :Array = DictionaryUtil.getKeys(d).sort();
+			assertTrue(ArrayUtil.arraysAreEqual(cKeys, dKeys));
+			for each (var key :* in cKeys) {
+				assertTrue(d[key] === c[key]);
+			}
 		}
 	}
 }

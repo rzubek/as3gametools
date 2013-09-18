@@ -32,5 +32,14 @@ package somasim.utils
 			}
 		}
 		
+		/** Makes a shallow copy of the specified dictionary */
+		public static function clone (dict :Dictionary, weakKeys :Boolean = false) :Dictionary {
+			var result :Dictionary = new Dictionary(weakKeys);
+			var keys :Array = getKeys(dict);
+			for each (var key :* in keys) {
+				result[key] = dict[key];
+			}
+			return result;
+		}
 	}
 }
