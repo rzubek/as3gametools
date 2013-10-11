@@ -5,6 +5,7 @@ package somasim.utils
 	import flash.utils.Dictionary;
 	
 	import org.flexunit.asserts.assertEquals;
+	import org.flexunit.asserts.assertFalse;
 	import org.flexunit.asserts.assertTrue;
 
 	public class DictionaryUtilTest {
@@ -59,6 +60,12 @@ package somasim.utils
 			for each (var key :* in cKeys) {
 				assertTrue(d[key] === c[key]);
 			}
+		}
+		
+		[Test]
+		public function testIsEmpty():void {
+			assertFalse(DictionaryUtil.isEmpty(makeDictionary()));
+			assertTrue(DictionaryUtil.isEmpty(new Dictionary()));
 		}
 	}
 }

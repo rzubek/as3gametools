@@ -41,5 +41,13 @@ package somasim.utils
 			}
 			return result;
 		}
+		
+		/** Returns false if the dictionary contains any keys, true if it's empty. */
+		public static function isEmpty (dict :Dictionary) :Boolean {
+			for (var key :* in dict) {
+				return false;
+			}
+			return true;
+		}
 	}
 }
