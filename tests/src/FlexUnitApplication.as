@@ -19,6 +19,8 @@ package
 	
 	import flexunit.flexui.FlexUnitTestRunnerUIAS;
 	
+	import somasim.malloc.ByteArrayUnmanagedTests;
+	import somasim.malloc.DomainMemoryManagerTests;
 	import somasim.math.CRC32Test;
 	import somasim.math.random.MersenneTwisterTest;
 	import somasim.math.random.TinyMTTest;
@@ -48,12 +50,14 @@ package
 			testsToRun.push(com.adobe.utils.StringUtilTest);
 			testsToRun.push(somasim.pools.ObjectPoolTest);
 			testsToRun.push(com.adobe.crypto.HMACSHA1Test);
+			testsToRun.push(somasim.malloc.ByteArrayUnmanagedTests);
 			testsToRun.push(com.adobe.utils.ArrayUtilTest);
 			testsToRun.push(com.adobe.utils.IntUtilTest);
 			testsToRun.push(somasim.math.random.TinyMTTest);
 			testsToRun.push(com.adobe.crypto.MD5Test);
 			testsToRun.push(somasim.math.random.MersenneTwisterTest);
 			testsToRun.push(com.adobe.net.URITest);
+			testsToRun.push(somasim.malloc.DomainMemoryManagerTests);
 			testsToRun.push(com.adobe.images.PNGEncoderTest);
 			testsToRun.push(com.adobe.crypto.HMACMD5Test);
 			testsToRun.push(somasim.utils.VectorUtilTest);
