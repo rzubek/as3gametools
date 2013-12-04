@@ -11,7 +11,6 @@ package
 	import com.adobe.images.JPGEncoderTest;
 	import com.adobe.images.PNGEncoderTest;
 	import com.adobe.net.URITest;
-	import com.adobe.utils.ArrayUtilTest;
 	import com.adobe.utils.IntUtilTest;
 	import com.adobe.utils.StringUtilTest;
 	
@@ -25,6 +24,7 @@ package
 	import somasim.math.random.MersenneTwisterTest;
 	import somasim.math.random.TinyMTTest;
 	import somasim.pools.ObjectPoolTest;
+	import somasim.utils.ArrayUtilTest;
 	import somasim.utils.DictionaryUtilTest;
 	import somasim.utils.VectorUtilTest;
 	
@@ -51,7 +51,7 @@ package
 			testsToRun.push(somasim.pools.ObjectPoolTest);
 			testsToRun.push(com.adobe.crypto.HMACSHA1Test);
 			testsToRun.push(somasim.malloc.ByteArrayUnmanagedTests);
-			testsToRun.push(com.adobe.utils.ArrayUtilTest);
+			testsToRun.push(somasim.utils.ArrayUtilTest);
 			testsToRun.push(com.adobe.utils.IntUtilTest);
 			testsToRun.push(somasim.math.random.TinyMTTest);
 			testsToRun.push(com.adobe.crypto.MD5Test);

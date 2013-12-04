@@ -13,74 +13,58 @@ package somasim.utils
 			v = new <uint>[0, 1, 2, 3, 4, 5, 6, 7, 7, 7];
         }
 		
-		public function testArraysAreEqual():void
+		public function testVectorsAreEqual():void
 		{
-			var v2:Vector.<uint> = VectorUtil.copyVector(v);
+			var v2:Vector.<uint> = VectorUtil.copy(v);
 			
-			assertTrue("VectorUtil.vectorsAreEqual(v, v2)",
-						VectorUtil.vectorsAreEqual(v, v2));
-											
-			assertTrue("!VectorUtil.vectorsAreEqual(arr, new Vector.<uint>())",
-						!VectorUtil.vectorsAreEqual(v, new Vector.<uint>()));											
+			assertTrue("VectorUtil.equals(v, v2)", VectorUtil.equals(v, v2));
+			assertFalse("VectorUtil.equals(v, new Vector.<uint>())", VectorUtil.equals(v, new Vector.<uint>()));											
 		}		
 		
 		public function testCopyVector():void
 		{
-			var len:uint = v.length;
-			var v2:Vector.<uint> = VectorUtil.copyVector(v);
-
-			var len2:uint = v2.length;
-			assertTrue("len2 == v.length", len2 == v.length);
+			var v2:Vector.<uint> = VectorUtil.copy(v);
+			assertNotNull("v2 not null", v2);
+			assertEquals("v.length == v2.length", v.length, v2.length);
 			
-			for(var i:uint = 0; i < len2; i++)
-			{
-				assertTrue("v["+i+"] == v2["+i+"]", v[i] == v2[i]);
-			}
-			
-			VectorUtil.removeValueFromVector(v2, 1);
-			
-			assertTrue("v.length == len", v.length == len);
+			for(var i :uint = 0; i < v.length; i++) {
+				assertEquals("v["+i+"] == v2["+i+"]", v[i], v2[i]);
+			}			
 		}		
 		
 		public function testRemoveValueFromVector():void
 		{
-			var v2:Vector.<uint> = VectorUtil.copyVector(v);
-			var len2:Number = v2.length;
+			var v2:Vector.<uint> = VectorUtil.copy(v);
+			var len2:uint = v2.length;
+
+			VectorUtil.remove(v2, 4);
 			
-			VectorUtil.removeValueFromVector(v2, 4);
-			
-			assertNotNull("v2 is null", v2);
-			assertTrue("(len2 - 1) == v2.length", (len2 - 1) == v2.length);
+			assertEquals("v2.length == (len2 - 1)", (len2 - 1), v2.length);
 			assertTrue("v2[4] != 4", v2[4] != 4);
 			
-			assertTrue("!VectorUtil.vectorContainsValue(v2, 4)",
-						!VectorUtil.vectorContainsValue(v2, 4));			
+			assertFalse("VectorUtil.contains(v2, 4)", VectorUtil.contains(v2, 4));			
 			
-			var v3:Vector.<uint> = VectorUtil.copyVector(v);
+			var v3:Vector.<uint> = VectorUtil.copy(v);
 			var len3:Number = v3.length;
 			
-			VectorUtil.removeValueFromVector(v3, 7);	
+			VectorUtil.remove(v3, 7);	
 			
-			assertTrue("v3.length == (len3 - 3)", v3.length == (len3 - 3));
-			assertTrue("!VectorUtil.vectorContainsValue(v3, 7)",
-						!VectorUtil.vectorContainsValue(v3, 7));
+			assertEquals("v3.length == (len3 - 3)", (len3 - 3), v3.length);
+			assertFalse("VectorUtil.contains(v3, 7)", VectorUtil.contains(v3, 7));
 									
-			var v4:Vector.<uint> = VectorUtil.copyVector(v);
+			var v4:Vector.<uint> = VectorUtil.copy(v);
 			var len4:Number = v4.length;
 			
-			VectorUtil.removeValueFromVector(v4, 12345);	
+			VectorUtil.remove(v4, 12345);	
 			
-			assertTrue("len4 == v4.length", len4 == v4.length);
+			assertEquals("len4 == v4.length", len4, v4.length);
 				
 		}
 
 		public function testVectorContainsValue():void
 		{
-			assertTrue("VectorUtil.vectorContainsValue(v, 1)",
-						VectorUtil.vectorContainsValue(v, 1));
-										
-			assertTrue("!VectorUtil.vectorContainsValue(v, 10)", 
-						!VectorUtil.vectorContainsValue(v, 10));
+			assertTrue("VectorUtil.contains(v, 1)", VectorUtil.contains(v, 1));
+			assertFalse("VectorUtil.contains(v, 10)", VectorUtil.contains(v, 10));
 		}
 
 	}

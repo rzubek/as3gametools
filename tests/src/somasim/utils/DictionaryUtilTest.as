@@ -1,7 +1,5 @@
 package somasim.utils
 {
-	import com.adobe.utils.ArrayUtil;
-	
 	import flash.utils.Dictionary;
 	
 	import org.flexunit.asserts.assertEquals;
@@ -25,9 +23,9 @@ package somasim.utils
 			var d :Dictionary = makeDictionary();
 			var keys :Array = DictionaryUtil.getKeys(d);
 			assertEquals(3, keys.length);
-			assertTrue(ArrayUtil.arrayContainsValue(keys, "keyA"));
-			assertTrue(ArrayUtil.arrayContainsValue(keys, "keyB"));
-			assertTrue(ArrayUtil.arrayContainsValue(keys, 1));
+			assertTrue(ArrayUtil.contains(keys, "keyA"));
+			assertTrue(ArrayUtil.contains(keys, "keyB"));
+			assertTrue(ArrayUtil.contains(keys, 1));
 		}
 
 		[Test]
@@ -35,9 +33,9 @@ package somasim.utils
 			var d :Dictionary = makeDictionary();
 			var values :Array = DictionaryUtil.getValues(d);
 			assertEquals(3, values.length);
-			assertTrue(ArrayUtil.arrayContainsValue(values, "valueA"));
-			assertTrue(ArrayUtil.arrayContainsValue(values, "valueB"));
-			assertTrue(ArrayUtil.arrayContainsValue(values, TESTOBJ));
+			assertTrue(ArrayUtil.contains(values, "valueA"));
+			assertTrue(ArrayUtil.contains(values, "valueB"));
+			assertTrue(ArrayUtil.contains(values, TESTOBJ));
 		}
 
 		[Test]
@@ -56,7 +54,7 @@ package somasim.utils
 			
 			var cKeys :Array = DictionaryUtil.getKeys(c).sort();
 			var dKeys :Array = DictionaryUtil.getKeys(d).sort();
-			assertTrue(ArrayUtil.arraysAreEqual(cKeys, dKeys));
+			assertTrue(ArrayUtil.equals(cKeys, dKeys));
 			for each (var key :* in cKeys) {
 				assertTrue(d[key] === c[key]);
 			}

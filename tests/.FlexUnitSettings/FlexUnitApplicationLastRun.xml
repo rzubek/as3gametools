@@ -6,7 +6,7 @@
 <testsuite name="somasim.pools:ObjectPoolTest" type="testsuiteclass"/>
 <testsuite name="com.adobe.crypto:HMACSHA1Test" type="testsuiteclass"/>
 <testsuite name="somasim.malloc:ByteArrayUnmanagedTests" type="testsuiteclass"/>
-<testsuite name="com.adobe.utils:ArrayUtilTest" type="testsuiteclass"/>
+<testsuite name="somasim.utils:ArrayUtilTest" type="testsuiteclass"/>
 <testsuite name="com.adobe.utils:IntUtilTest" type="testsuiteclass"/>
 <testsuite name="somasim.math.random:TinyMTTest" type="testsuiteclass"/>
 <testsuite name="com.adobe.crypto:MD5Test" type="testsuiteclass"/>
