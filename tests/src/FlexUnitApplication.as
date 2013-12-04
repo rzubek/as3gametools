@@ -25,6 +25,7 @@ package
 	import somasim.math.random.TinyMTTest;
 	import somasim.pools.ObjectPoolTest;
 	import somasim.utils.ArrayUtilTest;
+	import somasim.utils.BitwiseUtilTest;
 	import somasim.utils.DictionaryUtilTest;
 	import somasim.utils.VectorUtilTest;
 	
@@ -49,6 +50,7 @@ package
 			testsToRun.push(com.adobe.crypto.SHA256Test);
 			testsToRun.push(com.adobe.utils.StringUtilTest);
 			testsToRun.push(somasim.pools.ObjectPoolTest);
+			testsToRun.push(somasim.utils.BitwiseUtilTest);
 			testsToRun.push(com.adobe.crypto.HMACSHA1Test);
 			testsToRun.push(somasim.malloc.ByteArrayUnmanagedTests);
 			testsToRun.push(somasim.utils.ArrayUtilTest);

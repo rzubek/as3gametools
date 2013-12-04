@@ -4,6 +4,7 @@
 <testsuite name="com.adobe.crypto:SHA256Test" type="testsuiteclass"/>
 <testsuite name="com.adobe.utils:StringUtilTest" type="testsuiteclass"/>
 <testsuite name="somasim.pools:ObjectPoolTest" type="testsuiteclass"/>
+<testsuite name="somasim.utils:BitwiseUtilTest" type="testsuiteclass"/>
 <testsuite name="com.adobe.crypto:HMACSHA1Test" type="testsuiteclass"/>
 <testsuite name="somasim.malloc:ByteArrayUnmanagedTests" type="testsuiteclass"/>
 <testsuite name="somasim.utils:ArrayUtilTest" type="testsuiteclass"/>
