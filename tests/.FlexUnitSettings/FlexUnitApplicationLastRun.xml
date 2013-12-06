@@ -2,6 +2,8 @@
 <testrun name="" >
 <testsuite  name="Default Test Suite" project="AS3 Game Tools Unit Tests">
 <testsuite name="com.adobe.crypto:SHA256Test" type="testsuiteclass"/>
+<testsuite name="somasim.fn:FnTest" type="testsuiteclass"/>
+<testsuite name="somasim.utils:SequenceUtilTest" type="testsuiteclass"/>
 <testsuite name="com.adobe.utils:StringUtilTest" type="testsuiteclass"/>
 <testsuite name="somasim.pools:ObjectPoolTest" type="testsuiteclass"/>
 <testsuite name="somasim.utils:BitwiseUtilTest" type="testsuiteclass"/>

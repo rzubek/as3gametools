@@ -18,6 +18,7 @@ package
 	
 	import flexunit.flexui.FlexUnitTestRunnerUIAS;
 	
+	import somasim.fn.FnTest;
 	import somasim.malloc.ByteArrayUnmanagedTests;
 	import somasim.malloc.DomainMemoryManagerTests;
 	import somasim.math.CRC32Test;
@@ -27,6 +28,7 @@ package
 	import somasim.utils.ArrayUtilTest;
 	import somasim.utils.BitwiseUtilTest;
 	import somasim.utils.DictionaryUtilTest;
+	import somasim.utils.SequenceUtilTest;
 	import somasim.utils.VectorUtilTest;
 	
 	public class FlexUnitApplication extends Sprite
@@ -48,6 +50,8 @@ package
 		{
 			var testsToRun:Array = new Array();
 			testsToRun.push(com.adobe.crypto.SHA256Test);
+			testsToRun.push(somasim.fn.FnTest);
+			testsToRun.push(somasim.utils.SequenceUtilTest);
 			testsToRun.push(com.adobe.utils.StringUtilTest);
 			testsToRun.push(somasim.pools.ObjectPoolTest);
 			testsToRun.push(somasim.utils.BitwiseUtilTest);
