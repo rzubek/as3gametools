@@ -22,5 +22,24 @@ package somasim.fn
 			var even :Array = filter(function (x :Number) :Boolean { return (x % 2) == 0; }, source);			
 			assertTrue("filter test", ArrayUtil.equals(even, [2, 4]));
 		}
+		
+		public function testFoldLeft () :void {
+			var source :Array = [ "a", "b", "c" ];
+			var result :String = foldLeft(function (s1 :String, s2 :String) :String { return s1 + s2; }, "_", source);
+			assertEquals("foldLeftTest", "cba_", result);
+			
+			var nonresult :String = foldLeft(function (s1 :String, s2 :String) :String { return s1 + s2; }, "_", []);
+			assertEquals("foldLeftTest", "_", nonresult);
+		}
+		
+		public function testFoldRight () :void {
+			var source :Array = [ "a", "b", "c" ];
+			var result :String = foldRight(function (s1 :String, s2 :String) :String { return s1 + s2; }, "_", source);
+			assertEquals("foldLeftTest", "abc_", result);
+
+			var nonresult :String = foldRight(function (s1 :String, s2 :String) :String { return s1 + s2; }, "_", []);
+			assertEquals("foldLeftTest", "_", nonresult);
+		}
+
 	}
 }
