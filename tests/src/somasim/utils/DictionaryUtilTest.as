@@ -65,5 +65,23 @@ package somasim.utils
 			assertFalse(DictionaryUtil.isEmpty(makeDictionary()));
 			assertTrue(DictionaryUtil.isEmpty(new Dictionary()));
 		}
+		
+		[Test]
+		public function testToObject():void {
+			var d :Dictionary = makeDictionary();
+			var o :Object = DictionaryUtil.toObject(d);
+			assertEquals("valueA", o.keyA);
+			assertEquals("valueB", o["keyB"]);
+			assertEquals(TESTOBJ, o["1"]);
+		}
+
+		[Test]
+		public function testToDictionary():void {
+			var o :Object = { keyA: "valueA", keyB: "valueB", 1: TESTOBJ };
+			var d :Dictionary = DictionaryUtil.toDictionary(o);
+			assertEquals("valueA", d["keyA"]);
+			assertEquals("valueB", d["keyB"]);
+			assertEquals(TESTOBJ, d["1"]);
+		}
 	}
 }

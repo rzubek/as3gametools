@@ -49,5 +49,27 @@ package somasim.utils
 			}
 			return true;
 		}
+		
+		/** Shallowly converts a Dictionary into an Object. All keys will be converted into their
+		 * string representations, using the call String(key). */
+		public static function toObject (dict :Dictionary) :Object {
+			var result :Object = {};
+			for (var key :* in dict) {
+				var val :* = dict[key];
+				result[String(key)] = val;
+			}
+			return result;
+		}
+		
+		/** Shallowly converts an Object into a Dictionary */
+		public static function toDictionary (obj :Object) :Dictionary {
+			var result :Dictionary = new Dictionary();
+			for (var key :* in obj) {
+				var val :* = obj[key];
+				result[key] = val;
+			}
+			return result;
+		}
+
 	}
 }
