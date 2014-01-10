@@ -46,5 +46,20 @@ package somasim.utils
 			}
 			return results;
 		}
+		
+		/** Fills the target sequence with all elements from the source sequence, 
+		 * appending each to the end in order, and returns a reference to the modified target sequence.
+		 * 
+		 * Useful for converting between vector and array types, for example:
+		 * <pre>
+		 *   var vec :Vector.<int> = fill(new <int>[], someArrayOfIntegers);
+		 * </pre>
+		 */
+		public static function fill (target :*, source :*) :* {
+			for each (var element :* in source) {
+				target.push(element);
+			}
+			return target;
+		}
 	}
 }

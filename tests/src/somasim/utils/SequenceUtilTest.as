@@ -31,5 +31,15 @@ package somasim.utils
 			assertEquals("obj['0'] == 1", 1, obj["0"]);
 			assertEquals("obj['2'] == 3", 3, obj["2"]);
 		}
+		
+		public function testFill () :void {
+			var source :Array = [ 1, 2, 3 ];
+			var target :Vector.<uint> = new <uint> [ 0 ];
+			var result :Vector.<uint> = SequenceUtil.fill(target, source);
+			
+			assertEquals("result == target", target, result);
+			assertEquals("result.length == 4", 4, result.length);
+			assertEquals("result[3] == 3", 3, result[3]);
+		}
 	}
 }
