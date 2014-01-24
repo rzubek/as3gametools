@@ -51,23 +51,24 @@ package somasim.fn
 
 		public function testAny () :void {
 			var source :Array = [ 1, 2, 3, 4, 5 ];
-			var haseven :Boolean = any(function(x :Number) :Boolean { return (x % 2) == 0; }, source);
-			assertTrue("any test 1", haseven);
+			var firsteven :* = any(function(x :Number) :Boolean { return (x % 2) == 0; }, source);
+			assertTrue("any test 1", firsteven == 2);
 
 			source = [ 1, 3, 5 ];
-			haseven = any(function(x :Number) :Boolean { return (x % 2) == 0; }, source);
-			assertFalse("any test 2", haseven);
+			firsteven = any(function(x :Number) :Boolean { return (x % 2) == 0; }, source);
+			assertTrue("any test 2", firsteven === undefined);
+			assertTrue("any test 2b", !firsteven);
 		}
 		
 		public function testAll () :void {
 			var source :Array = [ 1, 2, 3, 4, 5 ];
-			var haseven :Boolean = all(function(x :Number) :Boolean { return (x % 2) == 0; }, source);
-			assertFalse("all test 1", haseven);
+			var alleven :* = all(function(x :Number) :Boolean { return (x % 2) == 0; }, source);
+			assertTrue("all test 1", alleven === undefined);
+			assertTrue("all test 1b", !alleven);
 			
 			source = [ 2, 4 ];
-			haseven = all(function(x :Number) :Boolean { return (x % 2) == 0; }, source);
-			assertTrue("all test 2", haseven);
+			alleven = all(function(x :Number) :Boolean { return (x % 2) == 0; }, source);
+			assertTrue("all test 2", alleven == 4);
 		}
-
 	}
 }
