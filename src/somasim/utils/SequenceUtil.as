@@ -52,14 +52,51 @@ package somasim.utils
 		 * 
 		 * Useful for converting between vector and array types, for example:
 		 * <pre>
-		 *   var vec :Vector.<int> = fill(new <int>[], someArrayOfIntegers);
+		 *   var vec :Vector.<int> = fillFromSeq(new <int>[], someArrayOfIntegers);
 		 * </pre>
 		 */
-		public static function fill (target :*, source :*) :* {
+		public static function fillFromSeq (target :*, source :*) :* {
 			for each (var element :* in source) {
 				target.push(element);
 			}
 			return target;
 		}
+		
+		/** Fills the target sequence with the given value, and returns a reference to the modified target sequence.
+		 * By default, if count is negative, the sequence will be filled from the given offset to the end.
+		 * Alternatively, if count is positive, the sequence will be filled with the given number of elements.
+		 * If autosize is true, the sequence will grow or shrink to fit the count. (Only meaningful if count is negative.)
+		 * 
+		 * <pre>
+		 *   fillWithValue([0, 0, 0], 9);               // => [ 9, 9, 9 ]
+		 *   fillWithValue([0, 0, 0], 9, 1);            // => [ 0, 9, 9 ]
+		 *   fillWithValue([0, 0, 0], 9, 1, 1);         // => [ 0, 9, 0 ]
+		 *   fillWithValue([0, 0, 0], 9, 1, 3);         // => [ 0, 9, 9 ] (without resize)
+		 *   fillWithValue([0, 0, 0], 9, 1, 3, true);   // => [ 0, 9, 9, 9 ]
+		 *   fillWithValue([0, 0, 0], 9, 1, 1, true);   // => [ 0, 9 ]
+		 * </pre>
+		 */
+		public static function fillWithValue (target :*, value :*, offset :uint = 0, count :int = -1, autosize :Boolean = false) :* {
+			if (count < 0) {
+				// just fill to the end
+				count = target.length - offset;
+			} else if (! autosize) {
+				// count specified, autosize disabled
+				// fill count, or to the end, whichever comes first
+				count = Math.min(target.length - offset, count);
+			} else {
+				// count specified, autosize enabled
+				// resize the target!
+				target.length = (offset + count);
+			}
+			
+			for (var i :int = 0; i < count; i++) {
+				var index :uint = offset + i;
+				target[index] = value;
+			}
+			
+			return target;
+		}
+
 	}
 }

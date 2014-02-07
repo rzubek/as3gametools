@@ -32,14 +32,24 @@ package somasim.utils
 			assertEquals("obj['2'] == 3", 3, obj["2"]);
 		}
 		
-		public function testFill () :void {
+		public function testFillFromSeq () :void {
 			var source :Array = [ 1, 2, 3 ];
 			var target :Vector.<uint> = new <uint> [ 0 ];
-			var result :Vector.<uint> = SequenceUtil.fill(target, source);
+			var result :Vector.<uint> = SequenceUtil.fillFromSeq(target, source);
 			
 			assertEquals("result == target", target, result);
 			assertEquals("result.length == 4", 4, result.length);
 			assertEquals("result[3] == 3", 3, result[3]);
 		}
+		
+		public function testFillWithValue () :void {
+			assertTrue(ArrayUtil.equals([9, 9, 9], SequenceUtil.fillWithValue([0, 0, 0], 9)));
+			assertTrue(ArrayUtil.equals([0, 9, 9], SequenceUtil.fillWithValue([0, 0, 0], 9, 1)));
+			assertTrue(ArrayUtil.equals([0, 9, 0], SequenceUtil.fillWithValue([0, 0, 0], 9, 1, 1)));
+			assertTrue(ArrayUtil.equals([0, 9, 9], SequenceUtil.fillWithValue([0, 0, 0], 9, 1, 3)));
+			assertTrue(ArrayUtil.equals([0, 9, 9, 9], SequenceUtil.fillWithValue([0, 0, 0], 9, 1, 3, true)));
+			assertTrue(ArrayUtil.equals([0, 9], SequenceUtil.fillWithValue([0, 0, 0], 9, 1, 1, true)));
+		}
+
 	}
 }
